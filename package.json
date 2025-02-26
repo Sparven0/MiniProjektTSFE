@@ -1,0 +1,21 @@
+{
+  "name": "parcel",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel ./src/index.html",
+    "build": "parcel build ./src/index.html --dist-dir docs --public-url ./",
+    "clean": "del-cli ./.parcel-cache ./dist ./public"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "del-cli": "^6.0.0",
+    "jquery": "^3.7.1",
+    "jQuery": "^1.7.4",
+    "parcel": "^2.13.3"
+  }
+}

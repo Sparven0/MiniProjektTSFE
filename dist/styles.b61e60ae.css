@@ -1,0 +1,177 @@
+/* Basic body and font styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Container for each book */
+  .bookwrapper {
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+    width: 300px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .bookwrapper:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Title and writer styling */
+  .bookwrapper p {
+    margin: 5px 0;
+    font-size: 16px;
+  }
+  
+  .bookwrapper p:first-of-type {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Styling for the read checkbox */
+  input[type="checkbox"] {
+    margin-right: 8px;
+  }
+  
+  input[type="checkbox"]:checked {
+    background-color: #4caf50;
+  }
+  
+  /* Styling for the review dropdown */
+  select {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+  }
+  
+  /* Save and Remove button styling */
+  button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  button:active {
+    background-color: #388e3c;
+  }
+  
+  /* Styling for the "Remove" button when a book is disliked and read */
+  button.remove {
+    background-color: #e53935;
+  }
+  
+  button.remove:hover {
+    background-color: #d32f2f;
+  }
+  
+  button.remove:active {
+    background-color: #c62828;
+  }
+  
+  /* Style for the "Save" button inside the book wrapper */
+  .save-btn {
+    background-color: #2196f3;
+  }
+  
+  .save-btn:hover {
+    background-color: #1976d2;
+  }
+
+  .newBookDiv {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    max-width: 100%;
+  }
+  
+  /* Form input elements */
+  input[type="text"],
+  select {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    font-size: 14px;
+  }
+  
+  /* Checkbox styling */
+  input[type="checkbox"] {
+    margin-right: 8px;
+    width: auto;
+  }
+  
+  /* Labels for inputs and select */
+  label {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  /* Styling for the submit button */
+  button[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    margin-top: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  button[type="submit"]:active {
+    background-color: #388e3c;
+  }
+  
+  /* Styling for the form container */
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Additional styles for form inputs when focused */
+  input[type="text"]:focus,
+  select:focus {
+    outline: none;
+    border: 1px solid #4caf50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.4);
+  }
+
+  
+
+
+
+
+/*# sourceMappingURL=/styles.b61e60ae.css.map */

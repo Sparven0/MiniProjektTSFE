@@ -16,6 +16,7 @@
     "del-cli": "^6.0.0",
     "jquery": "^3.7.1",
     "jQuery": "^1.7.4",
-    "parcel": "^2.13.3"
+    "parcel": "^2.13.3",
+    "typescript": "^5.7.3"
   }
 }

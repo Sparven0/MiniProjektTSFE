@@ -80,9 +80,11 @@ export async function getData():Promise<any> {
     try {
       const specUrl = `${url}/new`
       const res = await fetch(specUrl, options);
+      console.log(res)
       const data = await res.json();
       console.log(data);
       console.log(`body: ${body}`);
+
       
     } catch (e) {
       console.log('Error writing book:', e);

@@ -10,6 +10,7 @@ async function displayBookIds() {
   try {
     const data = await getData();
     console.log(data);
+
     if (data.books && Array.isArray(data.books)) {
       data.books.forEach(function (book: {
         title: string;
@@ -125,16 +126,20 @@ async function displayBookIds() {
 
 
 
-form?.addEventListener('submit',async (event) => {
+form?.addEventListener('submit', async (event) => {
   event.preventDefault();
+
   const formData = new FormData(form);
   const title = formData.get('title') as string;
   const writer = formData.get('writer') as string;
   const read = formData.get('read');
   console.log(formData)
+
   const readBoolean = read !== null && typeof read === 'string' && read === 'on';
+
   try {
     await writeBook(title, writer, readBoolean);
+    await displayBookIds();
   } catch (error) {
     console.error("Error writing book:", error);
   }

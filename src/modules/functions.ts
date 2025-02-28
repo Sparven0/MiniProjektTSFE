@@ -1,7 +1,7 @@
 
 
 
-const url = `http://localhost:3030/books`;
+const url = `https://fe24-js2-mp3-gustaf-vingren-backend.onrender.com/books`;
 export async function getData():Promise<any> {
     const res = await fetch(url);
   

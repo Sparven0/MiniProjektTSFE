@@ -701,7 +701,7 @@ parcelHelpers.export(exports, "changeReadStatus", ()=>changeReadStatus);
 parcelHelpers.export(exports, "changeReviewStatus", ()=>changeReviewStatus);
 parcelHelpers.export(exports, "writeBook", ()=>writeBook);
 parcelHelpers.export(exports, "deleteBook", ()=>deleteBook);
-const url = `http://localhost:3030/books`;
+const url = `https://fe24-js2-mp3-gustaf-vingren-backend.onrender.com/books`;
 async function getData() {
     const res = await fetch(url);
     if (!res.ok) throw new Error("Network response was not ok");

@@ -122,17 +122,23 @@ async function displayBookIds() {
   }
 }
 
-form?.addEventListener('submit', event => {
+
+
+
+form?.addEventListener('submit',async (event) => {
   event.preventDefault();
   const formData = new FormData(form);
   const title = formData.get('title') as string;
   const writer = formData.get('writer') as string;
   const read = formData.get('read');
-  location.reload();
+  console.log(formData)
   const readBoolean = read !== null && typeof read === 'string' && read === 'on';
-  writeBook(title, writer, readBoolean, () => {
+  try {
+    await writeBook(title, writer, readBoolean);
     displayBookIds();
-  });
+  } catch (error) {
+    console.error("Error writing book:", error);
+  }
 });
 
 displayBookIds();

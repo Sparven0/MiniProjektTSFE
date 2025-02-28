@@ -676,17 +676,20 @@ async function displayBookIds() {
         console.error("Error fetching data:", error);
     }
 }
-form?.addEventListener('submit', (event)=>{
+form?.addEventListener('submit', async (event)=>{
     event.preventDefault();
     const formData = new FormData(form);
     const title = formData.get('title');
     const writer = formData.get('writer');
     const read = formData.get('read');
-    location.reload();
+    console.log(formData);
     const readBoolean = read !== null && typeof read === 'string' && read === 'on';
-    (0, _functions.writeBook)(title, writer, readBoolean, ()=>{
+    try {
+        await (0, _functions.writeBook)(title, writer, readBoolean);
         displayBookIds();
-    });
+    } catch (error) {
+        console.error("Error writing book:", error);
+    }
 });
 displayBookIds();
 
@@ -698,7 +701,7 @@ parcelHelpers.export(exports, "changeReadStatus", ()=>changeReadStatus);
 parcelHelpers.export(exports, "changeReviewStatus", ()=>changeReviewStatus);
 parcelHelpers.export(exports, "writeBook", ()=>writeBook);
 parcelHelpers.export(exports, "deleteBook", ()=>deleteBook);
-const url = `https://fe24-js2-mp3-gustaf-vingren-backend.onrender.com/books`;
+const url = `http://localhost:3030/books`;
 async function getData() {
     const res = await fetch(url);
     if (!res.ok) throw new Error("Network response was not ok");
@@ -746,7 +749,7 @@ async function changeReviewStatus(id, reviewStat) {
         console.log('Error updating status:', e);
     }
 }
-async function writeBook(title, writer, read, callback) {
+async function writeBook(title, writer, read) {
     const body = {
         ID: Date.now(),
         title: title,
@@ -766,7 +769,7 @@ async function writeBook(title, writer, read, callback) {
         const res = await fetch(specUrl, options);
         const data = await res.json();
         console.log(data);
-        callback();
+        console.log(`body: ${body}`);
     } catch (e) {
         console.log('Error writing book:', e);
     }

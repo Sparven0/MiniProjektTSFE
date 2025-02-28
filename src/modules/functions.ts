@@ -1,7 +1,7 @@
 
 
 
-const url = `https://fe24-js2-mp3-gustaf-vingren-backend.onrender.com/books`;
+const url = `http://localhost:3030/books`;
 export async function getData():Promise<any> {
     const res = await fetch(url);
   
@@ -45,24 +45,24 @@ export async function getData():Promise<any> {
         review: `${reviewStat}`
     }
     const options = {
-        method: 'PATCH',
-        headers:{
-            'Content-type': 'application/json'
-        },
-        body: JSON.stringify(body)
+      method: 'PATCH',
+      headers:{
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify(body)
     }
     try{
-        const res = await fetch(specUrl, options);
-        const data = await res.json();
+      const res = await fetch(specUrl, options);
+      const data = await res.json();
     }catch(e){
-        console.log('Error updating status:', e)
+      console.log('Error updating status:', e)
     }
   }
 
 
 
 
-  export async function writeBook(title: string, writer: string, read: boolean, callback:Function): Promise<any> {
+  export async function writeBook(title: string, writer: string, read: boolean): Promise<any> {
     const body = {
       ID: Date.now(),
       title: title,
@@ -82,7 +82,8 @@ export async function getData():Promise<any> {
       const res = await fetch(specUrl, options);
       const data = await res.json();
       console.log(data);
-      callback()
+      console.log(`body: ${body}`);
+      
     } catch (e) {
       console.log('Error writing book:', e);
     }

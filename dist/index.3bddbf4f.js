@@ -675,7 +675,6 @@ async function displayBookIds() {
     } catch (error) {
         console.error("Error fetching data:", error);
     }
-    location.reload();
 }
 form?.addEventListener('submit', async (event)=>{
     event.preventDefault();
@@ -687,7 +686,7 @@ form?.addEventListener('submit', async (event)=>{
     const readBoolean = read !== null && typeof read === 'string' && read === 'on';
     try {
         await (0, _functions.writeBook)(title, writer, readBoolean);
-        displayBookIds();
+        location.reload();
     } catch (error) {
         console.error("Error writing book:", error);
     }

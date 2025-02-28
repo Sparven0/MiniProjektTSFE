@@ -135,7 +135,6 @@ form?.addEventListener('submit',async (event) => {
   const readBoolean = read !== null && typeof read === 'string' && read === 'on';
   try {
     await writeBook(title, writer, readBoolean);
-    location.reload();
   } catch (error) {
     console.error("Error writing book:", error);
   }

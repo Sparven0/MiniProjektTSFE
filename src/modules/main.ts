@@ -120,6 +120,7 @@ async function displayBookIds() {
   } catch (error) {
     console.error("Error fetching data:", error);
   }
+  location.reload();
 }
 
 

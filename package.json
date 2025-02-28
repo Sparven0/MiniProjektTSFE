@@ -8,6 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "parcel ./src/index.html",
     "build": "parcel build ./src/index.html --dist-dir docs --public-url ./",
+    "postbuild": "echo '/*\n  Content-Type: application/javascript\n  Cache-Control: public, max-age=31536000, immutable\n' > dist/_headers",
     "clean": "del-cli ./.parcel-cache ./dist ./public"
   },
   "keywords": [],
